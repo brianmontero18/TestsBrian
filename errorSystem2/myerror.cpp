@@ -1,4 +1,6 @@
 #include "myerror.h"
+#include <QDebug>
+#include <QString>
 
 
 MyError::MyError(QObject *parent) :
@@ -14,4 +16,9 @@ QString MyError::Message()
 void MyError::SetMessage(QString Msg)
 {
     mMessage = Msg;
+}
+
+void MyError::handleError(MyError *error)
+{
+    qDebug() << "MyError = " << error->Message();
 }

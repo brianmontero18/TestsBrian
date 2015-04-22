@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QString>
 
-class MyError : public QObject
+class MyError : public QObject, public QString
 {
     Q_OBJECT
 public:
@@ -12,6 +12,7 @@ public:
 
     QString Message();
     void SetMessage(QString Msg);
+    void handleError(MyError* error);
 
 signals:
 

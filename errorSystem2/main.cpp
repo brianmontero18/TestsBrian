@@ -11,25 +11,11 @@ void test()
         {
             MyError *cErr = new MyError();
             cErr->SetMessage("brian@chat.facebook.com");
-            //throw cErr;
-
-            throw QString("myName@10.200.10.183");
-        }
-        catch(char* cerr)
-        {
-            qDebug() << cerr;
-        }
-        catch(QString sErr)
-        {
-            qDebug() << "The format must be" << sErr;
+            throw cErr;
         }
         catch(MyError *cErrMsg)
         {
-            qDebug() << "MyError = " << cErrMsg->Message();
-        }
-        catch(...)
-        {
-            qDebug() << "Unknow error has ocurred";
+             cErrMsg->handleError(cErrMsg);
         }
 
         qDebug() << "Try again";
