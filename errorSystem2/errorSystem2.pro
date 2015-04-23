@@ -16,7 +16,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    myerror.cpp
+    exception.cpp \
+    connectionexception.cpp \
+    controllerexception.cpp
 
 HEADERS += \
-    myerror.h
+    exception.h \
+    connectionexception.h \
+    controllerexception.h

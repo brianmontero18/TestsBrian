@@ -1,29 +1,25 @@
 #include <QCoreApplication>
 #include <QDebug>
 #include <QString>
-#include "myerror.h"
+#include "exception.h"
+#include "connectionexception.h"
+#include "controllerexception.h"
 
-
-void test()
+void test(const double n)
 {
-        qDebug() << "Starting";
-        try
-        {
-            MyError *cErr = new MyError();
-            cErr->SetMessage("brian@chat.facebook.com");
-            throw cErr;
-        }
-        catch(MyError *cErrMsg)
-        {
-             cErrMsg->handleError(cErrMsg);
-        }
-
-        qDebug() << "Try again";
+    try {
+        if (n < 5) throw(ConnectionException() );
+        if (n == 5) throw(controllerexception() );
+    }
+    catch(Exception& e) {
+        qDebug() << e.handlerException(e);
+    }
 }
+
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    test();
+    test(5);
     return a.exec();
 }
