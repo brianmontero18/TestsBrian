@@ -6,7 +6,7 @@
 class controllerexception : public Exception
 {
 public:
-    virtual QString handlerException(Exception& e);
+    virtual void handlerException();
     controllerexception();
     ~controllerexception();
 };

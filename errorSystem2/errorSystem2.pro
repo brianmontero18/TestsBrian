@@ -16,7 +16,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    exception.cpp \
     connectionexception.cpp \
     controllerexception.cpp
 

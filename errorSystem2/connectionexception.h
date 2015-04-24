@@ -6,7 +6,7 @@
 class ConnectionException : public Exception
 {
 public:
-    virtual QString handlerException(Exception& e);
+    virtual void handlerException();
     ConnectionException();
     ~ConnectionException();
 };

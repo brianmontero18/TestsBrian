@@ -5,6 +5,11 @@
 #include "connectionexception.h"
 #include "controllerexception.h"
 
+void execute(Exception& e)
+{
+    e.handlerException();
+}
+
 void test(const double n)
 {
     try {
@@ -12,7 +17,7 @@ void test(const double n)
         if (n == 5) throw(controllerexception() );
     }
     catch(Exception& e) {
-        qDebug() << e.handlerException(e);
+        execute(e);
     }
 }
 
@@ -20,6 +25,6 @@ void test(const double n)
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    test(5);
+    test(4);
     return a.exec();
 }

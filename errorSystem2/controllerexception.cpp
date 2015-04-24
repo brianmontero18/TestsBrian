@@ -1,9 +1,9 @@
 #include "controllerexception.h"
-
+#include <iostream>
 
 controllerexception::controllerexception()
 {
-    SetValue(1);
+
 }
 
 controllerexception::~controllerexception()
@@ -11,11 +11,7 @@ controllerexception::~controllerexception()
 
 }
 
-QString controllerexception::handlerException(Exception& e)
+void controllerexception::handlerException()
 {
-    switch (e.Value())
-        {
-        case 1:   return QString("Controller Error");break;
-        default:       return QString("Unknow Error");
-    }
+    std::cout << "soy ControllerException" << std::endl;
 }

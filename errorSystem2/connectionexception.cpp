@@ -1,9 +1,9 @@
 #include "connectionexception.h"
-
+#include <iostream>
 
 ConnectionException::ConnectionException()
 {
-    SetValue(0);
+
 }
 
 ConnectionException::~ConnectionException()
@@ -11,11 +11,7 @@ ConnectionException::~ConnectionException()
 
 }
 
-QString ConnectionException::handlerException(Exception& e)
+void ConnectionException::handlerException()
 {
-    switch (e.Value())
-        {
-        case 0: return QString("Connect Error");break;
-        default:       return QString("Unknow Error");
-    }
+    std::cout << "soy ConnectionException" << std::endl;
 }
